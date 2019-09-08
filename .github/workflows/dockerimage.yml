@@ -16,4 +16,3 @@ jobs:
       run:  docker login --username "krishnaprasadkv" --password "KECT@qxty+k"    
     - name: push the Docker image
       run:  docker push krishnaprasadkv/krishnaprasad:v1
-
