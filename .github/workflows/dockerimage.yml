@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+ 
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v1    
+    - name: Build the Docker image
+      run:  docker build . --file Dockerfile --tag krishnaprasadkv/krishnaprasad:v1      
+    - name: login to the Docker hub
+      run:  docker login --username "krishnaprasadkv" --password "KECT@qxty+k"    
+    - name: push the Docker image
+      run:  docker push krishnaprasadkv/krishnaprasad:v1
+
